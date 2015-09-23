@@ -7,8 +7,8 @@
     <ProjectGuid>{360BDA8F-C9D8-4C2A-9716-E0C44500601B}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>sms_message_parsing</RootNamespace>
-    <AssemblyName>sms-message-parsing</AssemblyName>
+    <RootNamespace>Spikes.SMSMessageParsing</RootNamespace>
+    <AssemblyName>Spikes.SMSMessageParsing</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -44,8 +44,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="Tests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utilities.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
