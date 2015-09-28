@@ -5,6 +5,10 @@ VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sms-message-parsing", "sms-message-parsing\sms-message-parsing.csproj", "{360BDA8F-C9D8-4C2A-9716-E0C44500601B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StreamSpike", "StreamSpike\StreamSpike.csproj", "{CACADBDB-5DDA-4C07-806F-9D02FB583755}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventBasedXmlParser", "EventBasedXmlParser\EventBasedXmlParser.csproj", "{C94ABA11-6ACC-4F54-9EAA-5F5217051966}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{360BDA8F-C9D8-4C2A-9716-E0C44500601B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{360BDA8F-C9D8-4C2A-9716-E0C44500601B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{360BDA8F-C9D8-4C2A-9716-E0C44500601B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CACADBDB-5DDA-4C07-806F-9D02FB583755}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CACADBDB-5DDA-4C07-806F-9D02FB583755}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CACADBDB-5DDA-4C07-806F-9D02FB583755}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CACADBDB-5DDA-4C07-806F-9D02FB583755}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C94ABA11-6ACC-4F54-9EAA-5F5217051966}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C94ABA11-6ACC-4F54-9EAA-5F5217051966}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C94ABA11-6ACC-4F54-9EAA-5F5217051966}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C94ABA11-6ACC-4F54-9EAA-5F5217051966}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
