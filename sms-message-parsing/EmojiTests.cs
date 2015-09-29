@@ -47,6 +47,7 @@ namespace Spikes.SMSMessageParsing
         }
 
 
+
         [Test]
         public void ShouldPrintC()
         {

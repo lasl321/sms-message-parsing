@@ -44,6 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataFromLogTests.cs" />
     <Compile Include="EmojiWebTests.cs" />
     <Compile Include="EmojiTests.cs" />
     <Compile Include="ParserTests.cs" />
