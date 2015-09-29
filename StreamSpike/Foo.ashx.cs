@@ -3,6 +3,7 @@ using System.IO;
 using System.Web;
 using System.Xml;
 using log4net;
+using Spikes;
 
 namespace StreamSpike
 {
@@ -16,23 +17,13 @@ namespace StreamSpike
         public void ProcessRequest(HttpContext context)
         {
             var stream = context.Request.InputStream;
-//            var memoryStream = new MemoryStream();
-//            stream.CopyTo(memoryStream);
-//            LogRequest(memoryStream.ToArray());
-
-//            memoryStream.Position = 0;
-//            var document = new XmlDocument();
-//            document.Load(memoryStream);
-
-            string readToEnd;
-            using (var reader = new StreamReader(stream))
+            SmsPayload payload;
+            using (var parser = new SmsPayloadParser(stream))
             {
-                readToEnd = reader.ReadToEnd();
+                payload = parser.Parse();
             }
-
-            var s = ParseString(readToEnd);
-
-            context.Response.Write($"{s}");
+            
+            context.Response.Write($"{payload.SenderPhoneNumber}");
             context.Response.ContentType = "text/plain";
         }
 

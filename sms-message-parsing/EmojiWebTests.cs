@@ -48,26 +48,18 @@ namespace Spikes.SMSMessageParsing
 
         private byte[] GetStart()
         {
-            const string s = "<foo>";
-            var stream = new MemoryStream();
-            using (var writer = new StreamWriter(stream, Encoding.UTF8))
-            {
-                writer.Write(s);
-            }
-
-            return stream.ToArray();
+            var stream = new FileStream("Start.txt", FileMode.Open);
+            var memoryStream = new MemoryStream();
+            stream.CopyTo(memoryStream);
+            return memoryStream.ToArray();
         }
 
         private byte[] GetEnd()
         {
-            const string s = "</foo>";
-            var stream = new MemoryStream();
-            using (var writer = new StreamWriter(stream, Encoding.UTF8))
-            {
-                writer.Write(s);
-            }
-
-            return stream.ToArray();
+            var stream = new FileStream("End.txt", FileMode.Open);
+            var memoryStream = new MemoryStream();
+            stream.CopyTo(memoryStream);
+            return memoryStream.ToArray();
         }
 
         [Test]

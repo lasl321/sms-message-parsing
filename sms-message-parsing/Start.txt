@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<request type="MESSAGE">
+    <message id="d85fa622-d6f4-425e-9c66-1c84b31eda56">
+        <recipient>
+            <id>
+                36878
+            </id>
+            <type>6</type>
+        </recipient>
+        <sender>
+            <id>+19496132979</id>
+            <property>
+                <name>CARRIER</name>
+                <value>2</value>
+            </property>
+            <type>5</type>
+        </sender>
+        <text>

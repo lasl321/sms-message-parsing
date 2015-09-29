@@ -1,11 +1,14 @@
 ﻿using System;
 using System.IO;
+using System.Reflection;
 using System.Xml;
+using log4net;
 
 namespace Spikes
 {
     public class SmsPayloadParser : IDisposable
     {
+        private static readonly ILog Log = LogManager.GetLogger(typeof (SmsPayloadParser));
         private readonly XmlReader _reader;
         private bool _inSenderElement;
         private bool _isIdElement;
@@ -59,36 +62,67 @@ namespace Spikes
 
         private void HandleRecipientElementStart()
         {
-            if (_reader.Name == "recipient") { _isRecipientElement = true; }
+            if (_reader.Name == "recipient")
+            {
+                Log.DebugFormat("Entering {0}", MethodBase.GetCurrentMethod().Name);
+                _isRecipientElement = true;
+            }
         }
 
         private void HandleRecipientElementEnd()
         {
-            if (_reader.Name == "recipient") { _isRecipientElement = false; }
+            if (_reader.Name == "recipient")
+            {
+                Log.DebugFormat("Entering {0}", MethodBase.GetCurrentMethod().Name);
+
+                _isRecipientElement = false;
+            }
         }
 
         private void HandleTextElementStart()
         {
-            if (_reader.Name == "text") { _isTextElement = true; }
+            if (_reader.Name == "text")
+            {
+                Log.DebugFormat("Entering {0}", MethodBase.GetCurrentMethod().Name);
+
+                _isTextElement = true;
+            }
         }
 
         private void HandleTextElementEnd()
         {
-            if (_reader.Name == "text") { _isTextElement = false; }
+            if (_reader.Name == "text")
+            {
+                Log.DebugFormat("Entering {0}", MethodBase.GetCurrentMethod().Name);
+
+                _isTextElement = false;
+            }
         }
 
         private void HandleIdElementStart()
         {
-            if (_reader.Name == "id") { _isIdElement = true; }
+            if (_reader.Name == "id")
+            {
+                Log.DebugFormat("Entering {0}", MethodBase.GetCurrentMethod().Name);
+
+                _isIdElement = true;
+            }
         }
 
         private void HandleIdElementEnd()
         {
-            if (_reader.Name == "id") { _isIdElement = false; }
+            if (_reader.Name == "id")
+            {
+                Log.DebugFormat("Entering {0}", MethodBase.GetCurrentMethod().Name);
+
+                _isIdElement = false;
+            }
         }
 
         private void HandleText(SmsPayload payload)
         {
+            Log.DebugFormat("Entering {0}", MethodBase.GetCurrentMethod().Name);
+
             if (_inSenderElement && _isIdElement)
             {
                 payload.SenderPhoneNumber = _reader.Value.Trim();
@@ -108,18 +142,28 @@ namespace Spikes
 
         private void HandleSenderElementStart()
         {
-            if (_reader.Name == "sender") { _inSenderElement = true; }
+            if (_reader.Name == "sender")
+            {
+                Log.DebugFormat("Entering {0}", MethodBase.GetCurrentMethod().Name);
+                _inSenderElement = true;
+            }
         }
 
         private void HandleSenderElementEnd()
         {
-            if (_reader.Name == "sender") { _inSenderElement = false; }
+            if (_reader.Name == "sender")
+            {
+                Log.DebugFormat("Entering {0}", MethodBase.GetCurrentMethod().Name);
+
+                _inSenderElement = false;
+            }
         }
 
         private void HandleRequestElementStart(SmsPayload payload)
         {
             if (_reader.Name == "request")
             {
+                Log.DebugFormat("Entering {0}", MethodBase.GetCurrentMethod().Name);
                 payload.Operation = _reader.GetAttribute("type");
             }
         }
