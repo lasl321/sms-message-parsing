@@ -360,6 +360,20 @@ namespace Spikes.SMSMessageParsing
         }
 
         [Test]
+        public void ShouldDecodeUnicodeBytes()
+        {
+            Print(Bytes);
+
+            using (var reader = new StreamReader(new MemoryStream(Bytes), Encoding.Unicode))
+            {
+                var readToEnd = reader.ReadToEnd();
+                Console.WriteLine(readToEnd);
+                var document = new XmlDocument();
+                document.LoadXml(readToEnd);
+            }
+        }
+
+        [Test]
         public void ShouldDecodeLatin1Bytes()
         {
             Print(Bytes);
@@ -379,10 +393,10 @@ namespace Spikes.SMSMessageParsing
         {
             var bytes = new byte[]
             {
-//                0x00,
-//                0x43,
-//                0x00,
-//                0x20,
+                0x00,
+                0x43,
+                0x00,
+                0x20,
                 0xC3,
                 0x98,
                 0x3D,
@@ -392,6 +406,7 @@ namespace Spikes.SMSMessageParsing
             };
 
             Print(bytes);
+
 
             var stream = new MemoryStream(bytes);
             using (var reader = new StreamReader(stream, Encoding.BigEndianUnicode, false))
